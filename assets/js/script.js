@@ -14,9 +14,10 @@ document.addEventListener("DOMContentLoaded", function() {
             }  
         })
     }   
-    runGame("Addition");
+    runGame("addition");
 
 })
+
 
 /**
  * The main game "loop", called when the script is first loaded
@@ -47,6 +48,7 @@ function runGame(gameType) {
  * the returned calculateCorrectAnswer array
  */
 
+
 function checkAnswer() {
 
     let userAnswer = parseInt(document.getElementById("answer-box").value);
@@ -65,6 +67,7 @@ function checkAnswer() {
  * Gets the operands (the numbers) and the operator (plus, minus etc)
  * directly from the dom, and returns the correct answer.
  */
+
 
 
 function calculateCorrectAnswer() {
