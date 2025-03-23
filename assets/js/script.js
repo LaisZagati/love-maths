@@ -57,8 +57,10 @@ function checkAnswer() {
 
     if (isCorrect) {
         alert ("Hey, you got it right!");
+        incrementScore();
     } else {
         alert (`Oh no! you answered ${userAnswer}. The correct answer was ${calculatedAnswer[0]}!`);
+        incrementWrongAnswer();
     }
 
     runGame(calculatedAnswer[1]); // index 0 and 1 refers to this part of the code: "operand1 + operand2" = [0] AND "divide" = [1]]
@@ -89,6 +91,26 @@ function calculateCorrectAnswer() {
         throw  `Unimplemented operator ${operator}. Aborting!`;
     }
 
+}
+
+/**
+ * Gets the current score from the DOM and increments it by 1
+ */
+function incrementScore() {
+    let oldScore = parseInt(document.getElementById("score").innerText);
+    console.log("Previous Score:", oldScore); // Logs the old score
+    document.getElementById("score").innerText = ++oldScore;
+    console.log("Updated Score:", oldScore); // Logs the updated score
+}
+
+/**
+ * Gets the current tally of incorrect answers from the DOM and increments it by 1
+ */
+function incrementWrongAnswer() {
+    let oldScore = parseInt(document.getElementById("incorrect").innerText);
+    console.log("Previous Incorrect Score:", oldScore); // Logs the old incorrect score
+    document.getElementById("incorrect").innerText = ++oldScore;
+    console.log("Updated Incorrect Score:", oldScore); // Logs the updated incorrect score
 }
 
 
