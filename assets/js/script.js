@@ -94,7 +94,7 @@ function calculateCorrectAnswer() {
         return [operand1 + operand2, "addition"];
     } else if (operator === "-") {
         return [operand1 - operand2, "subtract"];
-    } else if (operator === "x") {
+    } else if (operator === "*") {
         return [operand1 / operand2, "multiply"];
     } else if (operator === "/") {
         return [Math.floor(operand1 / operand2), "divide"];
